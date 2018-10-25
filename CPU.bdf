@@ -1851,7 +1851,7 @@ applicable agreement for further details.
 (symbol
 	(rect 3520 2272 3744 2432)
 	(text "Banco_reg" (rect 5 0 56 12)(font "Arial" ))
-	(text "inst14" (rect 8 144 37 156)(font "Arial" ))
+	(text "inst7" (rect 8 144 31 156)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1922,7 +1922,7 @@ applicable agreement for further details.
 (symbol
 	(rect 5888 2136 6120 2712)
 	(text "Controle" (rect 186 0 227 12)(font "Arial" ))
-	(text "inst33" (rect 195 560 224 572)(font "Arial" ))
+	(text "inst14" (rect 195 560 224 572)(font "Arial" ))
 	(port
 		(pt 232 32)
 		(input)
@@ -2176,6 +2176,11 @@ applicable agreement for further details.
 	(parameter
 		"Addi"
 		"001000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq"
+		"000100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
@@ -2504,6 +2509,41 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
+		"Beq1"
+		"00000000000000000000000010001001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq2"
+		"00000000000000000000000010001010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq3"
+		"00000000000000000000000010001011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq4"
+		"00000000000000000000010100011110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq5"
+		"00000000000000000000010100011111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq6"
+		"00000000000000000000010100100000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq7"
+		"00000000000000000000010100100001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
 		"pc4"
 		"00000000000000000000000000000011"
 		""
@@ -2512,7 +2552,7 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 216 560)(line_width 1))
 	)
 	(flipy)
-	(annotation_block (parameter)(rect 6120 1168 6464 2136))
+	(annotation_block (parameter)(rect 6120 1056 6464 2136))
 )
 (connector
 	(pt 2496 2136)

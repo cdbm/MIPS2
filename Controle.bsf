@@ -279,6 +279,11 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
+		"Beq"
+		"000100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
 		"Add"
 		"100000"
 		""
@@ -504,16 +509,6 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"And5"
-		"00000000000000000000001011001000"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"And6"
-		"00000000000000000000001011001001"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
 		"Jr1"
 		"00000000000000000000000001011000"
 		""
@@ -611,6 +606,41 @@ applicable agreement for further details.
 	(parameter
 		"Rte1"
 		"00000000000000000000000001111111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq1"
+		"00000000000000000000000010001001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq2"
+		"00000000000000000000000010001010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq3"
+		"00000000000000000000000010001011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq4"
+		"00000000000000000000010100011110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq5"
+		"00000000000000000000010100011111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq6"
+		"00000000000000000000010100100000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Beq7"
+		"00000000000000000000010100100001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter

@@ -38,6 +38,7 @@ reg [31:0] state;
 ///OPCODES
 parameter TipoR = 6'd0;
 parameter Addi = 6'd8;
+parameter Beq = 6'd4;
 
 //FUNC
 parameter Add = 6'd32;
@@ -108,8 +109,13 @@ parameter Break3 = 32'd119;
 parameter Break4 = 32'd1110;
 parameter Break5 = 32'd1111;
 parameter Rte1 = 32'd127;
-
-
+parameter Beq1 = 32'd137;
+parameter Beq2 = 32'd138;
+parameter Beq3 = 32'd139;
+parameter Beq4 = 32'd1310;
+parameter Beq5 = 32'd1311;
+parameter Beq6 = 32'd1312;
+parameter Beq7 = 32'd1313;
 
 //PC+4
 parameter pc4 = 32'd3;
@@ -453,6 +459,12 @@ parameter pc4 = 32'd3;
 						begin
 							state = Addi;
 						end
+						
+						Beq:
+						begin
+							state = Beq1;
+						end
+						
 						default:
 							begin
 							state = pc4;
@@ -909,7 +921,7 @@ parameter pc4 = 32'd3;
 					PCWrite = 1'b1;
 					state = pc4;
 				end
-				
+				//AND
 				And1:
 				begin 
 					PCWrite = 1'd0;
@@ -1022,6 +1034,7 @@ parameter pc4 = 32'd3;
 					MDRControl = 1'd0;
 					state = pc4;
 				end
+				//ADD
 				Add1:
 				begin
 					PCWrite = 1'd0;
@@ -1137,6 +1150,166 @@ parameter pc4 = 32'd3;
 					MDRControl = 1'd0;
 					state = pc4;
 				end
+				
+				
+				//BEQ
+				Beq1:
+				begin
+					state = Beq2;
+				end
+				
+				Beq2:
+				begin
+				PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'b001;
+					ALUOutControl = 1'd1;
+					DivControl = 1'd0;
+					MuxULA2 = 3'b100;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
+					state = Beq3;
+				end
+				Beq3:
+				begin
+					state= Beq4;
+				end
+				Beq4:
+				begin
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'b100;
+					ALUControl = 3'b010;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd1;
+					BControl = 1'd1;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
+					state = Beq5;
+				end
+				Beq5:
+				begin
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd1;
+					PCWriteCondMux = 1'd1;
+					MuxBranch = 3'b010;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'd0;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
+					state = Beq6;
+				end
+				Beq6:
+				begin
+					state = Beq7;
+				end
+				Beq7:
+				begin
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'd0;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
+				end
+				
 				
 				default:
 					begin
