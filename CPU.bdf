@@ -1922,7 +1922,7 @@ applicable agreement for further details.
 (symbol
 	(rect 5888 2136 6120 2712)
 	(text "Controle" (rect 186 0 227 12)(font "Arial" ))
-	(text "inst14" (rect 195 560 224 572)(font "Arial" ))
+	(text "inst21" (rect 195 560 224 572)(font "Arial" ))
 	(port
 		(pt 232 32)
 		(input)
@@ -2181,6 +2181,11 @@ applicable agreement for further details.
 	(parameter
 		"Beq"
 		"000100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bne"
+		"000101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
@@ -2544,6 +2549,41 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
+		"Bne1"
+		"00000000000000000000000010010011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bne2"
+		"00000000000000000000000010010100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bne3"
+		"00000000000000000000000010010101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bne4"
+		"00000000000000000000010110000010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bne5"
+		"00000000000000000000010110000011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bne6"
+		"00000000000000000000010110000100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bne7"
+		"00000000000000000000010110000101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
 		"pc4"
 		"00000000000000000000000000000011"
 		""
@@ -2552,7 +2592,7 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 216 560)(line_width 1))
 	)
 	(flipy)
-	(annotation_block (parameter)(rect 6120 1056 6464 2136))
+	(annotation_block (parameter)(rect 6120 944 6464 2136))
 )
 (connector
 	(pt 2496 2136)
