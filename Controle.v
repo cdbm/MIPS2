@@ -390,7 +390,6 @@ parameter pc4 = 32'd3;
 							//SUB
 								Sub:
 								begin
-									EPCCont = 1'd1;
 									state = Sub1;
 								end
 							//SRL
@@ -463,26 +462,78 @@ parameter pc4 = 32'd3;
 				//ADDI
 				Addi:
 				begin
-					AControl = 1'b1;
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
 					MuxULA1 = 3'b100;
+					ALUControl = 3'd1;
+					ALUOutControl = 1'd1;
+					DivControl = 1'd0;
 					MuxULA2 = 3'b010;
-					ALUControl = 3'b001;
-					ALUOutControl = 1'b1;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd1;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
 					state = Addi2;
 				end
 				Addi2:
 				begin
-					MuxWriteData = 3'b000;
-					RegWrite = 1'b1;
-					ALUOutControl = 1'b0;
-					RegDst = 2'b00;
-					AControl = 1'b0;
-					BControl = 1'b0;
 					state = Addi3;
 				end
 				Addi3:
 				begin
-					RegWrite = 1'b0;
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd1;
+					RegDst = 2'd0;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'd0;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
 					state = pc4;
 				end
 				
@@ -861,38 +912,38 @@ parameter pc4 = 32'd3;
 				
 				And1:
 				begin 
-					PCWrite <= 1'd0;
-					PCWriteCond <= 1'd0;
-					PCWriteCondMux <= 1'd0;
-					MuxBranch <= 3'd0;
-					MuxMemoriaEnd <= 3'd0;
-					IRWrite <= 1'd0;
-					RegWrite <= 1'd0;
-					RegDst <= 2'd0;
-					MuxULA1 <= 3'b100;
-					ALUControl <= 3'b011;
-					ALUOutControl <= 1'd1;
-					DivControl <= 1'd0;
-					MuxULA2 <= 3'd0;
-					MuxMemoriaDado <= 2'd0;
-					AControl <= 1'd1;
-					BControl <= 1'd1;
-					EPCCont <= 1'd0;
-					MultControl <= 1'd0;
-					RDControl <= 3'd0;
-					MuxRD <= 1'd0;
-					MuxSaidaLO <= 1'd0;
-					MuxSaidaHI <= 1'd0;
-					ContShifts <= 2'd0;
-					MuxWriteData <= 4'd0;
-					MuxHILO <= 1'd0;
-					LuiControl <= 1'd0;
-					MuxMDR <= 1'd0;
-					ControleBits <= 3'd0;
-					CHi <= 1'd0;
-					CLo <= 1'd0;
-					MemRead <= 1'd0;
-					MDRControl <= 1'd0;
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'b100;
+					ALUControl = 3'b011;
+					ALUOutControl = 1'd1;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd1;
+					BControl = 1'd1;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
 					state = Add2;
 				end
 				And2:
@@ -901,76 +952,192 @@ parameter pc4 = 32'd3;
 				end
 				And3:
 				begin
-					PCWrite <= 1'd0;
-					PCWriteCond <= 1'd0;
-					PCWriteCondMux <= 1'd0;
-					MuxBranch <= 3'd0;
-					MuxMemoriaEnd <= 3'd0;
-					IRWrite <= 1'd0;
-					RegWrite <= 1'd1;
-					RegDst <= 2'b01;
-					MuxULA1 <= 3'd0;
-					ALUControl <= 3'd0;
-					ALUOutControl <= 1'd0;
-					DivControl <= 1'd0;
-					MuxULA2 <= 3'd0;
-					MuxMemoriaDado <= 2'd0;
-					AControl <= 1'd0;
-					BControl <= 1'd0;
-					EPCCont <= 1'd0;
-					MultControl <= 1'd0;
-					RDControl <= 3'd0;
-					MuxRD <= 1'd0;
-					MuxSaidaLO <= 1'd0;
-					MuxSaidaHI <= 1'd0;
-					ContShifts <= 2'd0;
-					MuxWriteData <= 4'd0;
-					MuxHILO <= 1'd0;
-					LuiControl <= 1'd0;
-					MuxMDR <= 1'd0;
-					ControleBits <= 3'd0;
-					CHi <= 1'd0;
-					CLo <= 1'd0;
-					MemRead <= 1'd0;
-					MDRControl <= 1'd0;
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd1;
+					RegDst = 2'b01;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'd0;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
 					state = Add4;
 				end
 				And4:
 				begin
-					PCWrite <= 1'd0;
-					PCWriteCond <= 1'd0;
-					PCWriteCondMux <= 1'd0;
-					MuxBranch <= 3'd0;
-					MuxMemoriaEnd <= 3'd0;
-					IRWrite <= 1'd0;
-					RegWrite <= 1'd0;
-					RegDst <= 2'd0;
-					MuxULA1 <= 3'd0;
-					ALUControl <= 3'd0;
-					ALUOutControl <= 1'd0;
-					DivControl <= 1'd0;
-					MuxULA2 <= 3'd0;
-					MuxMemoriaDado <= 2'd0;
-					AControl <= 1'd0;
-					BControl <= 1'd0;
-					EPCCont <= 1'd0;
-					MultControl <= 1'd0;
-					RDControl <= 3'd0;
-					MuxRD <= 1'd0;
-					MuxSaidaLO <= 1'd0;
-					MuxSaidaHI <= 1'd0;
-					ContShifts <= 2'd0;
-					MuxWriteData <= 4'd0;
-					MuxHILO <= 1'd0;
-					LuiControl <= 1'd0;
-					MuxMDR <= 1'd0;
-					ControleBits <= 3'd0;
-					CHi <= 1'd0;
-					CLo <= 1'd0;
-					MemRead <= 1'd0;
-					MDRControl <= 1'd0;
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'd0;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
 					state = pc4;
 				end
+				Add1:
+				begin
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'b100;
+					ALUControl = 3'b001;
+					ALUOutControl = 1'd1;
+					DivControl = 1'd0;
+					MuxULA2 = 3'b000;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd1;
+					BControl = 1'd1;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
+					state= Add2;
+				end
+				
+				Add2:
+				begin
+					state = Add3;
+				end
+				
+				Add3:
+				begin
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd1;
+					RegDst = 2'd1;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'd0;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
+					state = Add4;
+				end
+				
+				Add4:
+				begin
+					PCWrite = 1'd0;
+					PCWriteCond = 1'd0;
+					PCWriteCondMux = 1'd0;
+					MuxBranch = 3'd0;
+					MuxMemoriaEnd = 3'd0;
+					IRWrite = 1'd0;
+					RegWrite = 1'd0;
+					RegDst = 2'd0;
+					MuxULA1 = 3'd0;
+					ALUControl = 3'd0;
+					ALUOutControl = 1'd0;
+					DivControl = 1'd0;
+					MuxULA2 = 3'd0;
+					MuxMemoriaDado = 2'd0;
+					AControl = 1'd0;
+					BControl = 1'd0;
+					EPCCont = 1'd0;
+					MultControl = 1'd0;
+					RDControl = 3'd0;
+					MuxRD = 1'd0;
+					MuxSaidaLO = 1'd0;
+					MuxSaidaHI = 1'd0;
+					ContShifts = 2'd0;
+					MuxWriteData = 4'd0;
+					MuxHILO = 1'd0;
+					LuiControl = 1'd0;
+					MuxMDR = 1'd0;
+					ControleBits = 3'd0;
+					CHi = 1'd0;
+					CLo = 1'd0;
+					MemRead = 1'd0;
+					MDRControl = 1'd0;
+					state = pc4;
+				end
+				
 				default:
 					begin
 					state = pc4;
