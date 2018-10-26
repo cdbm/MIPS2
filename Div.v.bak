@@ -9,7 +9,7 @@ reg [4:0] contador;
 parameter WHILE = 2'b00;
 parameter INITIAL = 2'b01;
 parameter REPEAT = 2'b10;
-parameter END = 2'b11;
+parameter END = 2'b11; // teste
 
 initial begin 
 	estado = WHILE;
