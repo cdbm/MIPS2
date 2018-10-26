@@ -289,6 +289,11 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
+		"Bgt"
+		"000111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
 		"Add"
 		"100000"
 		""
@@ -681,6 +686,41 @@ applicable agreement for further details.
 	(parameter
 		"Bne7"
 		"00000000000000000000010110000101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bgt1"
+		"00000000000000000000000010011101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bgt2"
+		"00000000000000000000000010011110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bgt3"
+		"00000000000000000000000010011111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bgt4"
+		"00000000000000000000010111100110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bgt5"
+		"00000000000000000000010111100111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bgt6"
+		"00000000000000000000010111101000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"Bgt7"
+		"00000000000000000000010111101001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
