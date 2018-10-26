@@ -1403,49 +1403,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 4864 2384 5080 2480)
-	(text "Mult" (rect 5 0 25 12)(font "Arial" ))
-	(text "inst45" (rect 8 80 37 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "MultControl[0..0]" (rect 0 0 81 12)(font "Arial" ))
-		(text "MultControl[0..0]" (rect 21 27 102 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "AFio[31..0]" (rect 0 0 54 12)(font "Arial" ))
-		(text "AFio[31..0]" (rect 21 43 75 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "BFio[31..0]" (rect 0 0 54 12)(font "Arial" ))
-		(text "BFio[31..0]" (rect 21 59 75 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "MultLoFio[31..0]" (rect 0 0 79 12)(font "Arial" ))
-		(text "MultLoFio[31..0]" (rect 116 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
-	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "MultHiFio[31..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "MultHiFio[31..0]" (rect 118 43 195 55)(font "Arial" ))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 200 80)(line_width 1))
-	)
-)
-(symbol
 	(rect 4880 2528 5088 2624)
 	(text "Div" (rect 5 0 22 12)(font "Arial" ))
 	(text "inst46" (rect 8 80 37 92)(font "Arial" ))
@@ -2634,6 +2591,70 @@ applicable agreement for further details.
 	(flipy)
 	(annotation_block (parameter)(rect 6120 832 6464 2136))
 )
+(symbol
+	(rect 4888 2384 5080 2512)
+	(text "Mult" (rect 5 0 25 12)(font "Arial" ))
+	(text "inst14" (rect 8 112 37 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "MultControl" (rect 0 0 55 12)(font "Arial" ))
+		(text "MultControl" (rect 21 27 76 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "AFio[31..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "AFio[31..0]" (rect 21 43 75 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "BFio[31..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "BFio[31..0]" (rect 21 59 75 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 75 45 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 91 35 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "MultLoFio[31..0]" (rect 0 0 79 12)(font "Arial" ))
+		(text "MultLoFio[31..0]" (rect 92 27 171 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32)(line_width 3))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "MultHiFio[31..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "MultHiFio[31..0]" (rect 94 43 171 55)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48)(line_width 3))
+	)
+	(port
+		(pt 192 64)
+		(output)
+		(text "fim" (rect 0 0 16 12)(font "Arial" ))
+		(text "fim" (rect 155 59 171 71)(font "Arial" ))
+		(line (pt 192 64)(pt 176 64)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 112)(line_width 1))
+	)
+)
 (connector
 	(pt 2496 2136)
 	(pt 2496 2152)
@@ -2973,10 +2994,6 @@ applicable agreement for further details.
 )
 (connector
 	(pt 3504 2264)
-	(pt 3784 2264)
-)
-(connector
-	(pt 3784 2368)
 	(pt 3784 2264)
 )
 (connector
@@ -4370,16 +4387,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 4864 2432)
-	(pt 4848 2432)
-	(bus)
-)
-(connector
-	(pt 4864 2448)
-	(pt 4704 2448)
-	(bus)
-)
-(connector
 	(pt 5080 2416)
 	(pt 5112 2416)
 	(bus)
@@ -4403,10 +4410,6 @@ applicable agreement for further details.
 	(pt 5088 2448)
 	(pt 5328 2448)
 	(bus)
-)
-(connector
-	(pt 4864 2416)
-	(pt 4776 2416)
 )
 (connector
 	(pt 4776 2416)
@@ -5530,10 +5533,6 @@ applicable agreement for further details.
 	(pt 3800 2216)
 )
 (connector
-	(pt 3752 2224)
-	(pt 3752 2384)
-)
-(connector
 	(pt 3752 2384)
 	(pt 3800 2384)
 )
@@ -5981,6 +5980,64 @@ applicable agreement for further details.
 	(pt 5528 2080)
 	(bus)
 )
+(connector
+	(pt 4776 2416)
+	(pt 4888 2416)
+)
+(connector
+	(pt 4848 2432)
+	(pt 4888 2432)
+	(bus)
+)
+(connector
+	(pt 4704 2448)
+	(pt 4888 2448)
+	(bus)
+)
+(connector
+	(pt 3784 2264)
+	(pt 3784 2368)
+)
+(connector
+	(pt 3784 2368)
+	(pt 3784 2552)
+)
+(connector
+	(pt 4864 2552)
+	(pt 4864 2480)
+)
+(connector
+	(pt 3784 2552)
+	(pt 4864 2552)
+)
+(connector
+	(pt 4864 2480)
+	(pt 4888 2480)
+)
+(connector
+	(pt 3752 2224)
+	(pt 3752 2384)
+)
+(connector
+	(pt 3752 2384)
+	(pt 3752 2544)
+)
+(connector
+	(pt 4792 2544)
+	(pt 4792 2456)
+)
+(connector
+	(pt 3752 2544)
+	(pt 4792 2544)
+)
+(connector
+	(pt 4792 2456)
+	(pt 4888 2456)
+)
+(connector
+	(pt 4888 2456)
+	(pt 4888 2464)
+)
 (junction (pt 3112 2448))
 (junction (pt 3440 2344))
 (junction (pt 4936 2256))
@@ -6047,3 +6104,4 @@ applicable agreement for further details.
 (junction (pt 4528 2416))
 (junction (pt 4528 2120))
 (junction (pt 5944 2080))
+(junction (pt 3752 2384))

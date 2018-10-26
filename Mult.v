@@ -1,11 +1,10 @@
-module Mult(input wire MultControl,input wire [31:0] AFio, input wire [31:0] BFio, 
+module Mult(input wire MultControl,input wire [31:0] AFio, input wire [31:0] BFio, input wire reset,
 			input wire clk,	output reg [31:0] MultLoFio, output reg [31:0] MultHiFio, 
 			output reg fim);
 //afio M
 //bfio Q
 	
 	reg  Q_1;
-	reg [1:0] temp;
 	integer i;
 	reg [64:0] M;
 	reg [64:0] Q;
@@ -13,6 +12,19 @@ module Mult(input wire MultControl,input wire [31:0] AFio, input wire [31:0] BFi
 	
 always @(posedge clk)
 begin
+	if(reset == 1)
+	begin
+		Q_1 =0;
+		i=0;
+		M = 32'b0;
+		Q = 32'b0;
+		MultHiFio = 32'd0;
+		MultLoFio = 32'd0;
+		
+	end
+
+
+
 	if(MultControl == 1)
 		begin
 		i = 0;
